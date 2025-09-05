@@ -1,10 +1,10 @@
 // Add your API endpoint here
 var API_ENDPOINT = "https://mvvcom19kl.execute-api.us-east-1.amazonaws.com/prod";
 
-// AJAX POST request to save student data
-document.getElementById("savestudent").onclick = function(){
+// AJAX POST request to save user data
+document.getElementById("saveuser").onclick = function(){
     var inputData = {
-        "studentid": $('#studentid').val(),
+        "userid": $('#userid').val(),
         "name": $('#name').val(),
         "class": $('#class').val(),
         "age": $('#age').val()
@@ -15,25 +15,25 @@ document.getElementById("savestudent").onclick = function(){
         data:  JSON.stringify(inputData),
         contentType: 'application/json; charset=utf-8',
         success: function (response) {
-            document.getElementById("studentSaved").innerHTML = "Student Data Saved!";
+            document.getElementById("userSaved").innerHTML = "User Data Saved!";
         },
         error: function () {
-            alert("Error saving student data.");
+            alert("Error saving user data.");
         }
     });
 }
 
-// AJAX GET request to retrieve all students
-document.getElementById("getstudents").onclick = function(){  
+// AJAX GET request to retrieve all users
+document.getElementById("getusers").onclick = function(){  
     $.ajax({
         url: API_ENDPOINT,
         type: 'GET',
         contentType: 'application/json; charset=utf-8',
         success: function (response) {
-            $('#studentTable tr').slice(1).remove();
+            $('#userTable tr').slice(1).remove();
             jQuery.each(response, function(i, data) {          
-                $("#studentTable").append("<tr> \
-                    <td>" + data['studentid'] + "</td> \
+                $("#userTable").append("<tr> \
+                    <td>" + data['userid'] + "</td> \
                     <td>" + data['name'] + "</td> \
                     <td>" + data['class'] + "</td> \
                     <td>" + data['age'] + "</td> \
@@ -41,7 +41,7 @@ document.getElementById("getstudents").onclick = function(){
             });
         },
         error: function () {
-            alert("Error retrieving student data.");
+            alert("Error retrieving user data.");
         }
     });
 }

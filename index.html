@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Data</title>
+    <title>User Data</title>
     <style>
         body {
             background-color: #f0f0f0; /* Light gray background */
@@ -61,9 +61,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Save and View Student Data</h1>
-        <label for="studentid">Student ID:</label><br>
-        <input type="text" name="studentid" id="studentid"><br>
+        <h1>Save and View User Data</h1>
+        <label for="userid">User ID:</label><br>
+        <input type="text" name="userid" id="userid"><br>
         
         <label for="name">Name:</label><br>
         <input type="text" name="name" id="name"><br>
@@ -75,14 +75,14 @@
         <input type="text" name="age" id="age"><br>
         
         <br>
-        <input type="submit" id="savestudent" value="Save Student Data">
-        <p id="studentSaved"></p>
+        <input type="submit" id="saveuser" value="Save user Data">
+        <p id="userSaved"></p>
         
         <br>
-        <input type="submit" id="getstudents" value="View all Students">
+        <input type="submit" id="getusers" value="View all Users">
         <br><br>
-        <div id="showStudents">
-            <table id="studentTable">
+        <div id="showUsers">
+            <table id="userTable">
                 <colgroup>
                     <col style="width:20%">
                     <col style="width:20%">
@@ -91,14 +91,14 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th>Student ID</th>
+                        <th>User ID</th>
                         <th>Name</th>
                         <th>Class</th>
                         <th>Age</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Student data will be displayed here -->
+                    <!-- User data will be displayed here -->
                 </tbody>
             </table>
         </div>
