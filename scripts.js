@@ -6,7 +6,7 @@ document.getElementById("saveuser").onclick = function(){
     var inputData = {
         "userid": $('#userid').val(),
         "name": $('#name').val(),
-        "Class": $('#Class').val(),
+        "class": $('#class').val(),
         "age": $('#age').val()
     };
     $.ajax({
@@ -35,7 +35,7 @@ document.getElementById("getusers").onclick = function(){
                 $("#userTable").append("<tr> \
                     <td>" + data['userid'] + "</td> \
                     <td>" + data['name'] + "</td> \
-                    <td>" + data['Class'] + "</td> \
+                    <td>" + data['class'] + "</td> \
                     <td>" + data['age'] + "</td> \
                     </tr>");
             });
